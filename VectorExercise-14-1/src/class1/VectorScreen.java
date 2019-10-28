@@ -5,6 +5,7 @@
  */
 package class1;
 
+import java.util.Arrays;
 import javax.swing.DefaultListModel;
 
 /**
@@ -74,6 +75,13 @@ public class VectorScreen extends javax.swing.JFrame {
         });
 
         bOrder.setText("Order");
+        bOrder.addMouseListener(new java.awt.event.MouseAdapter()
+        {
+            public void mouseClicked(java.awt.event.MouseEvent evt)
+            {
+                bOrderMouseClicked(evt);
+            }
+        });
 
         jLabel1.setText("Vector");
 
@@ -156,6 +164,11 @@ public class VectorScreen extends javax.swing.JFrame {
     private void bRemoveMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_bRemoveMouseClicked
     {//GEN-HEADEREND:event_bRemoveMouseClicked
         // TODO add your handling code here:
+        vector[select] = 0;
+        list.removeAllElements();
+        for (int c = 0; c < vector.length; c += 1) {
+            list.addElement(vector[c]);
+        }
         
     }//GEN-LAST:event_bRemoveMouseClicked
 
@@ -168,6 +181,16 @@ public class VectorScreen extends javax.swing.JFrame {
             list.addElement(vector[c]);
         }
     }//GEN-LAST:event_bRemoveActionPerformed
+
+    private void bOrderMouseClicked(java.awt.event.MouseEvent evt)//GEN-FIRST:event_bOrderMouseClicked
+    {//GEN-HEADEREND:event_bOrderMouseClicked
+        // TODO add your handling code here:
+       Arrays.sort(vector);
+        list.removeAllElements();
+        for (int c = 0; c < vector.length; c += 1) {
+            list.addElement(vector[c]);
+        }
+    }//GEN-LAST:event_bOrderMouseClicked
 
     /**
      * @param args the command line arguments
