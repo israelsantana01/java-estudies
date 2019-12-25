@@ -1,6 +1,6 @@
 package class03b;
 
-public class Main02 {
+public class Main03 {
 
     public static void main(String[] args) {
         Caneta c1 = new Caneta();
